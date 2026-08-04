@@ -38,14 +38,14 @@ bars:
           "komorebi_workspaces",
           "language",
           "media",
-          "cava"
+          "cava",
+          "wallpapers"
         ]
       center: ["clock"]
       right:
         [
           "hardware_widget",
           "volume",
-          "github",
           "notes",
           "launchpad",
           "power_menu"
@@ -412,3 +412,42 @@ widgets:
         restart: ["\uead2","Restart"]
         hibernate: ["\uf28e","Hibernate"]
         cancel: ["\udb81\udf3a","Cancel"]
+  wallpapers:
+    type: "yasb.wallpapers.WallpapersWidget"
+    options:
+      label: "<span>\udb83\ude09</span>"
+      # Example path to folder with images. Can be a single string or a list of strings.
+      # image_path: "C:\\Users\\{Username}\\Images" 
+      image_path: 
+        - "C:\\Users\\{Username}\\Images"
+        - "D:\\Wallpapers\\Nature"
+      change_automatically: false # Automatically change wallpaper
+      update_interval: 60 # If change_automatically is true, update interval in seconds
+      engine:
+        enabled: true
+        animation: "circle" # circle/slide_top/diamond/split
+      gallery:
+        enabled: true
+        blur: true
+        image_width: 220
+        image_per_page: 6
+        gallery_columns: 0 # 0 = auto, matches image_per_page for a single row
+        horizontal_position: "center" # left/center/right placement on screen
+        vertical_position: "center" # top/center/bottom placement
+        position_offset: 0 # minimum gap (px) from screen edges - see below for advanced options
+        respect_work_area: true # clamp to OS work area (avoids Windows taskbar)
+        show_buttons: false
+        orientation: "portrait"
+        image_spacing: 8
+        lazy_load: true
+        lazy_load_fadein: 400
+        image_corner_radius: 12
+      # Note: do not use run_after: command if you don't know what it does
+      run_after: # List of functions to run after wallpaper is updated
+        - "wal -s -t -e -q -n -i {image}" # Example command to run after wallpaper is updated
+        - "cmd.exe /c start /min pwsh ./yasb.ps1" # Example command to run after wallpaper is updated
+      callbacks:
+        on_left: "toggle_gallery"
+        on_middle: "do_nothing"
+        on_right: "change_wallpaper"
+
