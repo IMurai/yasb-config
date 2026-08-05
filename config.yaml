@@ -419,8 +419,7 @@ widgets:
       # Example path to folder with images. Can be a single string or a list of strings.
       # image_path: "C:\\Users\\{Username}\\Images" 
       image_path: 
-        - "C:\\Users\\{Username}\\Images"
-        - "D:\\Wallpapers\\Nature"
+        - "D:\\Users\\Downloads\\Wallpaper"
       change_automatically: false # Automatically change wallpaper
       update_interval: 60 # If change_automatically is true, update interval in seconds
       engine:
@@ -445,7 +444,6 @@ widgets:
       # Note: do not use run_after: command if you don't know what it does
       run_after: # List of functions to run after wallpaper is updated
         - "wal -s -t -e -q -n -i {image}" # Example command to run after wallpaper is updated
-        - "cmd.exe /c start /min pwsh ./yasb.ps1" # Example command to run after wallpaper is updated
       callbacks:
         on_left: "toggle_gallery"
         on_middle: "do_nothing"
