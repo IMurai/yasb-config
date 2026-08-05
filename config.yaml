@@ -38,8 +38,8 @@ bars:
           "komorebi_workspaces",
           "language",
           "media",
-          "cava",
-          "wallpapers"
+          "wallpapers",
+          "cava"
         ]
       center: ["clock"]
       right:
@@ -448,4 +448,3 @@ widgets:
         on_left: "toggle_gallery"
         on_middle: "do_nothing"
         on_right: "change_wallpaper"
-
