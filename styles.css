@@ -30,7 +30,7 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 5px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    padding-left: 10px;
+    padding: 0 10px 0 10px;
     padding-right: 10px;
     color: #f38ba8;
     font-size: 13px;
@@ -1458,7 +1458,12 @@
 
 /* Wallpaper */
 .wallpapers-widget {
-    padding: 0 6px 0 6px;
+    background-color: rgba(20, 20, 30, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    padding: 0 10px;
 }
 .wallpapers-widget .widget-container {}
 .wallpapers-gallery-window {
