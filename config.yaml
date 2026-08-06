@@ -36,7 +36,7 @@ bars:
           "komorebi_control",
           "update_check",
           "komorebi_workspaces",
-          "language",
+          # "language",
           "media",
           "wallpapers",
           "cava"
@@ -47,7 +47,6 @@ bars:
           "hardware_widget",
           "volume",
           "notes",
-          "launchpad",
           "power_menu"
         ]
 widgets:
@@ -77,28 +76,6 @@ widgets:
         label: "<span>\uf0ab</span> {count}"
         interval: 60
         exclude: []
-  launchpad:
-    type: "yasb.launchpad.LaunchpadWidget"
-    options:
-      label: "<span>\udb85\udcde</span>"
-      search_placeholder: "Search apps..."
-      app_icon_size: 48
-      window:
-        fullscreen: false
-        width: 1024
-        height: 768
-        overlay_block: true
-      window_style:
-        enable_blur: true
-        round_corners: true
-        round_corners_type: "normal"
-        border_color: "system"
-      window_animation:
-        fade_in_duration: 120
-        fade_out_duration: 100
-      group_apps: false
-      callbacks:
-        on_left: "toggle_launchpad"
   disk:
     type: "yasb.disk.DiskWidget"
     options:
@@ -412,6 +389,9 @@ widgets:
         restart: ["\uead2","Restart"]
         hibernate: ["\uf28e","Hibernate"]
         cancel: ["\udb81\udf3a","Cancel"]
+      keybindings:
+            - keys: "win+p"
+                action: "toggle_power_menu"
   wallpapers:
     type: "yasb.wallpapers.WallpapersWidget"
     options:
